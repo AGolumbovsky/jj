@@ -9,7 +9,7 @@ namespace jj
         {
 
             var adapter = "\"Ethernet 8\""; // args[0];
-            var sOrD = "static"; // args[1];
+            var sOrD = "static"; // !!!!! this may be changed by value of addr. Stoopid, I know but I just want it to work for now
             // var addr = args[0];
             var subnet = "255.255.255.0"; // args[3];
             var defGway = "10.10.10.1"; // args[4];
@@ -28,6 +28,11 @@ namespace jj
 
                 case "10":
                     addr = "10.10.1.142";
+                    break;
+                // !!!!!!!! don't leave it like this, it will blow up in your face before you know it
+                case "d":
+                    sOrD = "dhcp";
+                    addr = "";
                     break;
 
                 default:
