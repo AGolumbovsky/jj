@@ -69,6 +69,10 @@ namespace jj
                     addr = "";
                     break;
 
+                case "icfff":   //don't show sensitive info in public repo. For now let's just do stars, ok?
+                    addr = "****";
+                    break;
+
                 default:
                     addr = "8.8.8.8";
                     break;
