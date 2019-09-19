@@ -8,13 +8,47 @@ namespace jj
         static void Main(string[] args)
         {
 
-            var adapter = "\"Ethernet 8\""; // args[0];
-            var sOrD = "static"; // !!!!! this may be changed by value of addr. Stoopid, I know but I just want it to work for now
-            // var addr = args[0];
+            var adapter = args[0];
+            var sOrD = args[1];
+            string addr = args[2];
+          
             var subnet = "255.255.255.0"; // args[3];
             var defGway = "10.10.10.1"; // args[4];
 
-            var addr = args[0];
+            switch (adapter)
+            {
+                case "e6":
+                    adapter = "\"Ethernet 6\"";
+                    break;
+
+                case "e8":
+                    adapter = "\"Ethernet 8\"";
+                    break;
+
+                case "w":
+                    adapter = "Wi-Fi";
+                    break;
+
+                default: 
+                    adapter = "\"Ethernet 6\"";
+                    break;
+            }
+
+            switch (sOrD)
+            {
+                case "s":
+                    sOrD = "static";
+                    break;
+
+                case "d":
+                    sOrD = "dhcp";
+                    addr = ""; 
+                    break;
+
+                default:
+                    sOrD = "dhcp";
+                    break;
+            }
 
             switch (addr)
             {
