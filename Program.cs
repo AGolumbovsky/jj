@@ -42,7 +42,7 @@ namespace jj
 
                 case "d":
                     sOrD = "dhcp";
-                    addr = ""; 
+                    addr = " "; 
                     break;
 
                 default:
