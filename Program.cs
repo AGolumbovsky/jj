@@ -7,15 +7,39 @@ namespace jj
     {
         static void Main(string[] args)
         {
+            string adapter = "Ethernet 6";
+            var sOrD = "sOrD";
+            string addr = "8.8.8.8";
 
-            var adapter = args[0];
-            var sOrD = args[1];
-            string addr = args[2];
-          
             var subnet = "255.255.255.0"; // args[3];
             var defGway = "10.10.10.1"; // args[4];
 
-            switch (adapter)
+            var queryStr = "interface ip"; // set address" + " " + adapter + " " + sOrD + " " + addr;
+            var setAddr = "set address";
+            var showConfig = "show config";
+
+
+            switch (args.Length)
+            {
+                case 0:
+                    queryStr = "interface ip" +  " " + showConfig;
+                    break;
+
+                case 1:
+                    adapter = args[0];
+                    queryStr = "interface ip" + " " + setAddr + " " + adapter + " dhcp";
+                    break;
+
+                case 2:
+                    adapter = args[0];
+                    break;
+
+            }
+
+            
+          
+
+            /*switch (adapter)
             {
                 case "e6":
                     adapter = "\"Ethernet 6\"";
@@ -32,7 +56,7 @@ namespace jj
                 default: 
                     adapter = "\"Ethernet 6\"";
                     break;
-            }
+            }*/
 
             switch (sOrD)
             {
@@ -80,14 +104,14 @@ namespace jj
 
 
 
-            var formattedStr = "interface ip set address" + " " + adapter + " " + sOrD + " " + addr;
+            
 
             Process p = new Process();
-            ProcessStartInfo psi = new ProcessStartInfo("netsh", formattedStr);
+            ProcessStartInfo psi = new ProcessStartInfo("netsh", queryStr);
             p.StartInfo = psi;
             p.Start();
 
-            Console.WriteLine(formattedStr);
+            Console.WriteLine(queryStr);
 
         }
     }
