@@ -7,7 +7,7 @@ namespace jj
     {
         static void Main(string[] args)
         {
-            string adapter = "Ethernet 6";
+            string adapter = "notSpecified";
             var sOrD = "sOrD";
             string addr = "8.8.8.8";
 
@@ -18,6 +18,25 @@ namespace jj
             var setAddr = "set address";
             var showConfig = "show config";
 
+            // make shorthand for adapter
+            switch (adapter)
+            {
+                case "e6":
+                    adapter = "\"Ethernet 6\"";
+                    break;
+
+                case "e8":
+                    adapter = "\"Ethernet 8\"";
+                    break;
+
+                case "w":
+                    adapter = "\"Wi-Fi\"";
+                    break;
+
+                default: 
+                    adapter = "\"" + adapter  + "\"";
+                    break;
+            }
 
             switch (args.Length)
             {
@@ -33,30 +52,8 @@ namespace jj
                 case 2:
                     adapter = args[0];
                     break;
-
             }
 
-            
-          
-
-            /*switch (adapter)
-            {
-                case "e6":
-                    adapter = "\"Ethernet 6\"";
-                    break;
-
-                case "e8":
-                    adapter = "\"Ethernet 8\"";
-                    break;
-
-                case "w":
-                    adapter = "Wi-Fi";
-                    break;
-
-                default: 
-                    adapter = "\"Ethernet 6\"";
-                    break;
-            }*/
 
             switch (sOrD)
             {
