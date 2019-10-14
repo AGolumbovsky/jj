@@ -14,9 +14,9 @@ namespace jj
             var subnet = "255.255.255.0"; // args[3];
             var defGway = "10.10.10.1"; // args[4];
 
-            var queryStr = "interface ip"; // set address" + " " + adapter + " " + sOrD + " " + addr;
+            var queryStr = "query string is empty"; // set address" + " " + adapter + " " + sOrD + " " + addr;
             var setAddr = "set address";
-            var showConfig = "show config";
+           // var showConfig = "show config";
 
             // make shorthand for adapter
             switch (adapter)
@@ -41,12 +41,12 @@ namespace jj
             switch (args.Length)
             {
                 case 0:
-                    queryStr = "interface ip" +  " " + showConfig;
+                    Console.WriteLine("Welcome to jj !!!");
                     break;
 
                 case 1:
                     adapter = args[0];
-                    queryStr = "interface ip" + " " + setAddr + " " + adapter + " dhcp";
+                    queryStr = "interface ip set address " + adapter + " dhcp";
                     break;
 
                 case 2:
@@ -98,10 +98,6 @@ namespace jj
                     addr = "8.8.8.8";
                     break;
             }
-
-
-
-            
 
             Process p = new Process();
             ProcessStartInfo psi = new ProcessStartInfo("netsh", queryStr);
