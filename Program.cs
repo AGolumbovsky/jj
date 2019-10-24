@@ -41,7 +41,7 @@ namespace jj
             switch (args.Length)
             {
                 case 0:
-                    Console.WriteLine("Welcome to jj !!!");
+                    Console.WriteLine("Hi, I'm jj, what is your name? Wait, don't tell me, I don't care...");
                     break;
 
                 case 1:
