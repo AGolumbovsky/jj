@@ -8,10 +8,11 @@ namespace jj
     {
         static void Main(string[] args)
         {
+            MessWithArgs arrgs = new MessWithArgs();
 
-            string adapter = MessWithAdapter();
-            var sOrD = "sOrD";
-            string addr = "8.8.8.8";
+            var adapter = arrgs.MessWithAdapter();
+            var statDyn = arrgs.MessWithStatDyn();
+            string addr = arrgs.MessWithAddr();
 
             var subnet = "255.255.255.0"; // args[3];
             var defGway = "10.10.10.1"; // args[4];
