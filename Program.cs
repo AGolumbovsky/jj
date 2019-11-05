@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Diagnostics;
 
+
 namespace jj
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string adapter = "notSpecified";
+
+            string adapter = MessWithAdapter();
             var sOrD = "sOrD";
             string addr = "8.8.8.8";
 
