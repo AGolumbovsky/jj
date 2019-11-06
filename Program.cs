@@ -10,36 +10,15 @@ namespace jj
         {
             MessWithArgs arrgs = new MessWithArgs();
 
-            var adapter = arrgs.MessWithAdapter();
-            var statDyn = arrgs.MessWithStatDyn();
+            string adapter = arrgs.MessWithAdapter();
+            string statDyn = arrgs.MessWithStatDyn();
             string addr = arrgs.MessWithAddr();
+            string subnet = "255.255.255.0"; // args[3];
+            string gway = "10.10.10.1"; // args[4];
 
-            var subnet = "255.255.255.0"; // args[3];
-            var defGway = "10.10.10.1"; // args[4];
-
-            var queryStr = "query string is empty"; // set address" + " " + adapter + " " + sOrD + " " + addr;
-            var setAddr = "set address";
+            var queryStr = "query string is empty"; // set address" + " " + adapter + " " + statDyn + " " + addr;
+          
            // var showConfig = "show config";
-
-            // make shorthand for adapter
-            switch (adapter)
-            {
-                case "e6":
-                    adapter = "\"Ethernet 6\"";
-                    break;
-
-                case "e8":
-                    adapter = "\"Ethernet 8\"";
-                    break;
-
-                case "w":
-                    adapter = "\"Wi-Fi\"";
-                    break;
-
-                default: 
-                    adapter = "\"" + adapter  + "\"";
-                    break;
-            }
 
             switch (args.Length)
             {
