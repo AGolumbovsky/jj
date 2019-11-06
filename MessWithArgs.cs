@@ -13,6 +13,27 @@ namespace jj
             Console.WriteLine("messing with adapter");
 
             string adapter = "\"Ethernet 6\"";
+
+            switch (adapter)
+            {
+                case "e6":
+                    adapter = "\"Ethernet 6\"";
+                    break;
+
+                case "e8":
+                    adapter = "\"Ethernet 8\"";
+                    break;
+
+                case "w":
+                    adapter = "\"Wi-Fi\"";
+                    break;
+
+                default:
+                    adapter = "\"" + adapter + "\"";
+                    break;
+            }
+
+
             return adapter;
         }
 

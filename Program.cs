@@ -11,6 +11,8 @@ namespace jj
             MessWithArgs arrgs = new MessWithArgs();
 
             string adapter = arrgs.MessWithAdapter();
+            Console.WriteLine("adapter is " + adapter);
+
             string statDyn = arrgs.MessWithStatDyn();
             string addr = arrgs.MessWithAddr();
             string subnet = "255.255.255.0"; // args[3];
