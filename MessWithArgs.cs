@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace jj
 {
     public class MessWithArgs
-    {
+    { 
         public string MessWithAdapter()
         {
             Console.WriteLine("messing with adapter");
 
-            string adapter = "\"Ethernet 6\"";
+            string adapter = "e6";
 
             switch (adapter)
             {
