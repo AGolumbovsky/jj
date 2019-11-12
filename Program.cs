@@ -16,7 +16,7 @@ namespace jj
             string adapter = "defaultAdapter";
 
             string statDyn = "default statDyn";
-            string addr = formattedArgs.MessWithAddr();
+            string addr = "default address";
             string subnet = "255.255.255.0"; // args[3];
             string gway = "10.10.10.1"; // args[4];
 

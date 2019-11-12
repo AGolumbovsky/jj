@@ -10,10 +10,6 @@ namespace jj
     { 
         public string MessWithAdapter(string adapter)
         {
-            Console.WriteLine("messing with adapter");
-
-           // string adapter = "e6";
-
             switch (adapter)
             {
                 case "e6":
@@ -39,8 +35,6 @@ namespace jj
 
         public string MessWithStatDyn(string statDyn)
         {
-            Console.WriteLine("messing with statDyn");
-
             switch (statDyn)
             {
                 case "s":
@@ -59,12 +53,8 @@ namespace jj
             return statDyn;
         }
 
-        public string MessWithAddr()
+        public string MessWithAddr(string addr)
         {
-            Console.WriteLine("messing with addr");
-
-            string addr = "7.7.7.7";
-
             switch (addr)
             {
                 case "192":
