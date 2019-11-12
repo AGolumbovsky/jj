@@ -37,11 +37,9 @@ namespace jj
             return adapter;
         }
 
-        public string MessWithStatDyn(string statOrDyn)
+        public string MessWithStatDyn(string statDyn)
         {
             Console.WriteLine("messing with statDyn");
-
-            string statDyn = "";
 
             switch (statDyn)
             {
