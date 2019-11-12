@@ -8,13 +8,15 @@ namespace jj
     {
         static void Main(string[] args)
         {
-            MessWithArgs arrgs = new MessWithArgs();
+            MessWithArgs formattedArgs = new MessWithArgs();
 
-            string adapter = arrgs.MessWithAdapter();
-            Console.WriteLine("adapter is " + adapter);
+            // string adapter = formattedArgs.MessWithAdapter();
+            // Console.WriteLine("adapter is " + adapter);
 
-            string statDyn = arrgs.MessWithStatDyn();
-            string addr = arrgs.MessWithAddr();
+            string adapter = "defaultAdapter";
+
+            string statDyn = "default statDyn";
+            string addr = formattedArgs.MessWithAddr();
             string subnet = "255.255.255.0"; // args[3];
             string gway = "10.10.10.1"; // args[4];
 
@@ -24,17 +26,30 @@ namespace jj
 
             switch (args.Length)
             {
+                // as default behavior, will change Ethernet 6 to dhcp
                 case 0:
-                    Console.WriteLine("Hi, I'm jj, what is your name? Wait, don't tell me, I don't care...");
+                    Console.WriteLine("no parameters specified, setting Ethernet 6 to DHCP...");
+                    adapter = "Ethernet 6";
+                    queryStr = "interface ip set address \"Ethernet 6\" dhcp";
+
                     break;
 
+                // will only mess with the adapter, Ethernet 6 is default
+                // will need parenthesis to group a 2-part name, it is handled in MessWithArgs.MessWithAdapter()
                 case 1:
-                    adapter = args[0];
+                    // adapter = args[0];
+                    adapter = formattedArgs.MessWithAdapter(args[0]);
                     queryStr = "interface ip set address " + adapter + " dhcp";
                     break;
 
                 case 2:
-                    adapter = args[0];
+                    adapter = formattedArgs.MessWithAdapter(args[0]);
+                    statDyn = formattedArgs.MessWithStatDyn(args[1]);
+                    queryStr = "interface ip set address " + adapter + " " + statDyn;
+                    break;
+
+                default:
+                    Console.WriteLine("default case in args.Length");
                     break;
             }
 

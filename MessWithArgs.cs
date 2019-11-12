@@ -8,11 +8,11 @@ namespace jj
 {
     public class MessWithArgs
     { 
-        public string MessWithAdapter()
+        public string MessWithAdapter(string adapter)
         {
             Console.WriteLine("messing with adapter");
 
-            string adapter = "e6";
+           // string adapter = "e6";
 
             switch (adapter)
             {
@@ -37,7 +37,7 @@ namespace jj
             return adapter;
         }
 
-        public string MessWithStatDyn()
+        public string MessWithStatDyn(string statOrDyn)
         {
             Console.WriteLine("messing with statDyn");
 
