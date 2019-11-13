@@ -78,7 +78,6 @@ namespace jj
                     break;
             }
 
-
             return addr;
         }
     }
