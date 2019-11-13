@@ -57,24 +57,28 @@ namespace jj
         {
             switch (addr)
             {
+                case "d":
+                    addr = "dhcp";
+                    break;
+
                 case "192":
-                    addr = "192.168.1.142";
+                    addr = "static 192.168.1.193";
                     break;
 
                 case "172":
-                    addr = "172.16.0.142";
+                    addr = "static 172.16.0.193";
                     break;
 
                 case "10":
-                    addr = "10.10.1.142";
+                    addr = "static 10.10.1.193";
                     break;
 
                 case "icfff":   //don't show sensitive info in public repo. For now let's just do stars, ok?
-                    addr = "****";
+                    addr = "static 1.2.3.4";
                     break;
 
                 default:
-                    addr = "8.8.8.8";
+                    addr = "static 8.8.8.8";
                     break;
             }
 

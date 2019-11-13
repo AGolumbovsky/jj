@@ -44,8 +44,9 @@ namespace jj
 
                 case 2:
                     adapter = formattedArgs.MessWithAdapter(args[0]);
-                    statDyn = formattedArgs.MessWithStatDyn(args[1]);
-                    queryStr = "interface ip set address " + adapter + " " + statDyn;
+                    addr = formattedArgs.MessWithAddr(args[1]);
+                    // statDyn = formattedArgs.MessWithStatDyn(args[1]);
+                    queryStr = "interface ip set address " + adapter + " " + addr;
                     break;
 
                 default:
