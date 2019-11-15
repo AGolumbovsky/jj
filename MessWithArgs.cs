@@ -29,7 +29,6 @@ namespace jj
                     break;
             }
 
-
             return adapter;
         }
 
@@ -58,7 +57,7 @@ namespace jj
                     break;
 
                 default:
-                    addr = "static 8.8.8.8";
+                    addr = "static" + " " + addr; // watch the spaces, they can easily break it
                     break;
             }
 
