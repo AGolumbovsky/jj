@@ -33,26 +33,6 @@ namespace jj
             return adapter;
         }
 
-        public string MessWithStatDyn(string statDyn)
-        {
-            switch (statDyn)
-            {
-                case "s":
-                    statDyn = "static";
-                    break;
-
-                case "d":
-                    statDyn = "dhcp";
-                    break;
-
-                default:
-                    statDyn = "dhcp";
-                    break;
-            }
-
-            return statDyn;
-        }
-
         public string MessWithAddr(string addr)
         {
             switch (addr)
