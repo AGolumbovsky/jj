@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<Test>
-  <alias>"Blah"</alias>
-  <address>"1.1.1.1"</address>
-  <subnet>"default subnet .xml"</subnet>
-</Test>
+<iamgrootElement>
+  <!-- first awkward attempts to tame xml or something -->
+  <disneyElement>"disValue"</disneyElement>
+  <addressElement>"1.2.3.4"</addressElement>
+  <subnetElement>"255.255.0.0"</subnetElement>
+</iamgrootElement>
