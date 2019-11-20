@@ -54,6 +54,7 @@ namespace jj
                     break;
 
                 case "icfff":   //don't show sensitive info in public repo. For now let's just do stars, ok?
+                    // yablochko.chmo.ochko.*
                     addr = "static 1.2.3.4";
                     break;
 
