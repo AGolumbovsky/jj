@@ -8,14 +8,11 @@ using System.Xml;
 
 public class HandleXml
 {
-    public void SomeFn()
+    public void ReadFromXmlFile()
     {
         //Create the XmlDocument.
         XmlDocument doc = new XmlDocument();
-        doc.LoadXml("<?xml version='1.0' ?>" +
-                    "<book genre='novel' ISBN='1-861001-57-5'>" +
-                    "<title>Pride And Prejudice</title>" +
-                    "</book>");
+        doc.Load("C:/Users/agolumbovsky/ag_code/CS/jj/Aliases.xml"); //changing doc.LoadXml() to doc.Load()
 
         //Display the document element.
         Console.WriteLine(doc.DocumentElement.OuterXml);

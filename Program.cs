@@ -61,6 +61,9 @@ namespace jj
 
             Console.WriteLine("netsh query string is: " + "***" + queryStr + "***");
 
+            HandleXml Xmler = new HandleXml();
+            Xmler.ReadFromXmlFile();
+
         }
     }
 }
