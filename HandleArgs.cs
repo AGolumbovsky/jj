@@ -7,9 +7,15 @@ using System.Xml;
 
 namespace jj
 {
-    public class MessWithArgs
-    { 
-        public string MessWithAdapter(string adapter)
+    public class HandleArgs
+    {
+        public void CreateAliasFromXml()
+        {
+            HandleXml Xmlr = new HandleXml();
+            Xmlr.ReadFromXmlFile();
+        }
+
+        public string FormatAdapter(string adapter)
         {
             switch (adapter)
             {
@@ -33,7 +39,7 @@ namespace jj
             return adapter;
         }
 
-        public string MessWithAddr(string addr)
+        public string FormatAddr(string addr)
         {
             switch (addr)
             {
@@ -65,6 +71,5 @@ namespace jj
 
             return addr;
         }
-     
     }
 }

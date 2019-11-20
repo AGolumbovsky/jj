@@ -1,7 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <iamgrootElement>
-  <disneyElement>"disValue"</disneyElement>
-  <addressElement>"1.2.3.4"</addressElement>
+  
+  <adapters>
+    
+    <adapter>
+      <alias>"e6"</alias>
+      <value>"Ethernet 6"</value>
+    </adapter>
+    
+    <adapter>
+      <alias>"e8"</alias>
+      <value>"Ethernet 8"</value>
+    </adapter>
+
+    <adapter>
+      <alias>"w"</alias>
+      <value>"Wi-Fi"</value>
+    </adapter>
+    
+  </adapters>
+  
+  <addresses>
+
+    <addr>
+      <alias>"d"</alias>
+      <value>"dhcp"</value>
+    </addr>
+
+    <addr>
+      <alias>"192"</alias>
+      <value>"static 192.168.1.193"</value>
+    </addr>
+
+    <addr>
+      <alias>"10"</alias>
+      <value>"static 10.20.30.193"</value>
+    </addr>
+    
+  </addresses>
   <subnetElement>"255.255.0.0"</subnetElement>
+  
 </iamgrootElement>

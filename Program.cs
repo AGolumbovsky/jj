@@ -8,7 +8,7 @@ namespace jj
     {
         static void Main(string[] args)
         {
-            MessWithArgs formattedArgs = new MessWithArgs();
+            HandleArgs formattedArgs = new HandleArgs();
 
             // string adapter = formattedArgs.MessWithAdapter();
             // Console.WriteLine("adapter is " + adapter);
@@ -38,13 +38,13 @@ namespace jj
                 // will need parenthesis to group a 2-part name, it is handled in MessWithArgs.MessWithAdapter()
                 case 1:
                     // adapter = args[0];
-                    adapter = formattedArgs.MessWithAdapter(args[0]);
+                    adapter = formattedArgs.FormatAdapter(args[0]);
                     queryStr = "interface ip set address " + adapter + " dhcp";
                     break;
 
                 case 2:
-                    adapter = formattedArgs.MessWithAdapter(args[0]);
-                    addr = formattedArgs.MessWithAddr(args[1]);
+                    adapter = formattedArgs.FormatAdapter(args[0]);
+                    addr = formattedArgs.FormatAddr(args[1]);
                     // statDyn = formattedArgs.MessWithStatDyn(args[1]);
                     queryStr = "interface ip set address " + adapter + " " + addr;
                     break;
@@ -60,10 +60,6 @@ namespace jj
             p.Start();
 
             Console.WriteLine("netsh query string is: " + "***" + queryStr + "***");
-
-            HandleXml Xmler = new HandleXml();
-            Xmler.ReadFromXmlFile();
-
         }
     }
 }
