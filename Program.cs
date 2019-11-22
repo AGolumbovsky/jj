@@ -10,17 +10,12 @@ namespace jj
         {
             HandleArgs formattedArgs = new HandleArgs();
 
-            // string adapter = formattedArgs.MessWithAdapter();
-            // Console.WriteLine("adapter is " + adapter);
-
             string adapter = "defaultAdapter";
-
-            string statDyn = "default statDyn"; // maybe not needed at all
             string addr = "default address";
             string subnet = "255.255.255.0"; // args[3];
             string gway = "10.10.10.1"; // args[4];
 
-            var queryStr = "query string is empty"; // set address" + " " + adapter + " " + statDyn + " " + addr;
+            var queryStr = "empty query string"; // set address" + " " + adapter + " " + statDyn + " " + addr;
           
            // var showConfig = "show config";
 
@@ -35,7 +30,7 @@ namespace jj
                     break;
 
                 // will only mess with the adapter, Ethernet 6 is default
-                // will need parenthesis to group a 2-part name, it is handled in MessWithArgs.MessWithAdapter()
+                // needs parenthesis to group a 2-word name, it is handled in formattedArgs.FormatAdapter()
                 case 1:
                     // adapter = args[0];
                     adapter = formattedArgs.FormatAdapter(args[0]);
@@ -45,7 +40,6 @@ namespace jj
                 case 2:
                     adapter = formattedArgs.FormatAdapter(args[0]);
                     addr = formattedArgs.FormatAddr(args[1]);
-                    // statDyn = formattedArgs.MessWithStatDyn(args[1]);
                     queryStr = "interface ip set address " + adapter + " " + addr;
                     break;
 
