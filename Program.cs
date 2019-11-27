@@ -32,9 +32,15 @@ namespace jj
                 // will only mess with the adapter, Ethernet 6 is default
                 // needs parenthesis to group a 2-word name, it is handled in formattedArgs.FormatAdapter()
                 case 1:
-                    // adapter = args[0];
+                    if (args[0] == "show")
+                    {
+                        queryStr = "interface ip show config";
+                    }
+                    else
+                    {
                     adapter = formattedArgs.FormatAdapter(args[0]);
                     queryStr = "interface ip set address " + adapter + " dhcp";
+                    }
                     break;
 
                 case 2:
@@ -50,6 +56,11 @@ namespace jj
 
             Process p = new Process();
             ProcessStartInfo psi = new ProcessStartInfo("netsh", queryStr);
+
+            psi.WindowStyle = ProcessWindowStyle.Hidden;
+            psi.RedirectStandardOutput = true;
+            psi.UseShellExecute = false;
+
             p.StartInfo = psi;
             p.Start();
 

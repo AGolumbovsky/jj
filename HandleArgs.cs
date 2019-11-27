@@ -41,7 +41,7 @@ namespace jj
 
         public string FormatAddr(string addr)
         {
-            switch (addr)
+            switch (addr) 
             {
                 case "d":
                     addr = "dhcp";
