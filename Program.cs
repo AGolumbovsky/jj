@@ -57,9 +57,14 @@ namespace jj
             Process p = new Process();
             ProcessStartInfo psi = new ProcessStartInfo("netsh", queryStr);
 
-            psi.WindowStyle = ProcessWindowStyle.Hidden;
-            psi.RedirectStandardOutput = true;
+
+            /* *** This should make sure that no new window is open when the process starts *** */
+            // -------------
+
+            //psi.WindowStyle = ProcessWindowStyle.Hidden;
+            //psi.RedirectStandardOutput = true;
             psi.UseShellExecute = false;
+            psi.CreateNoWindow = true;
 
             p.StartInfo = psi;
             p.Start();
