@@ -27,6 +27,10 @@ namespace jj
                     adapter = "\"Ethernet 8\"";
                     break;
 
+                case "e12":
+                    adapter = "\"Ethernet 12\"";
+                    break;
+
                 case "w":
                     adapter = "\"Wi-Fi\"";
                     break;
