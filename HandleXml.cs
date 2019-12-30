@@ -6,6 +6,8 @@ using System;
 using System.IO;
 using System.Xml;
 
+using System.Linq;
+
 public class HandleXml
 {
     public void ReadFromXmlFile()
@@ -16,5 +18,9 @@ public class HandleXml
 
         //Display the document element.
         Console.WriteLine(doc.DocumentElement.OuterXml);
+
+        /*var meh =
+            from entry in doc
+            select entry;*/
     }
 }
