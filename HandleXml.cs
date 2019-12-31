@@ -19,8 +19,11 @@ public class HandleXml
         //Display the document element.
         Console.WriteLine(doc.DocumentElement.OuterXml);
 
-        /*var meh =
+        /*
+            var meh =
             from entry in doc
-            select entry;*/
+            select entry;
+            
+         */
     }
 }
