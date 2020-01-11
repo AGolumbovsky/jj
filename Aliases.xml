@@ -31,14 +31,15 @@
     <addr>
       <alias>"192"</alias>
       <value>"static 192.168.1.193"</value>
+      <subnet>"255.255.255.0"</subnet>
     </addr>
 
     <addr>
       <alias>"10"</alias>
       <value>"static 10.20.30.193"</value>
+      <subnet>"255.0.0.0</subnet>
     </addr>
     
   </addresses>
-  <subnetElement>"255.255.0.0"</subnetElement>
   
 </iamgrootElement>
