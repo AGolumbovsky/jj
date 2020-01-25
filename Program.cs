@@ -8,6 +8,7 @@ namespace jj
     {
         static void Main(string[] args)
         {
+
             HandleArgs formattedArgs = new HandleArgs();
 
             string adapter = "defaultAdapter";
