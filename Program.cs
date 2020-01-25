@@ -9,8 +9,6 @@ namespace jj
         static void Main(string[] args)
         {
 
-            HandleArgs formattedArgs = new HandleArgs();
-
             string adapter = "defaultAdapter";
             string addr = "default address";
             string subnet = "255.255.255.0"; // args[3];
@@ -39,14 +37,14 @@ namespace jj
                     }
                     else
                     {
-                    adapter = formattedArgs.FormatAdapter(args[0]);
+                    adapter = HandleArgs.FormatAdapter(args[0]);
                     queryStr = "interface ip set address " + adapter + " dhcp";
                     }
                     break;
 
                 case 2:
-                    adapter = formattedArgs.FormatAdapter(args[0]);
-                    addr = formattedArgs.FormatAddr(args[1]);
+                    adapter = HandleArgs.FormatAdapter(args[0]);
+                    addr = HandleArgs.FormatAddr(args[1]);
                     queryStr = "interface ip set address " + adapter + " " + addr;
                     break;
 

@@ -17,7 +17,7 @@ namespace jj
             Xmlr.ReadFromXmlFile();
         }
 
-        public string FormatAdapter(string adapter)
+        public static string FormatAdapter(string adapter)
         {
             switch (adapter)
             {
@@ -45,7 +45,7 @@ namespace jj
             return adapter;
         }
 
-        public string FormatAddr(string addr)
+        public static string FormatAddr(string addr)
         {
             switch (addr) 
             {
