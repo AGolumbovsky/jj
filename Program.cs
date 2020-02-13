@@ -8,15 +8,16 @@ namespace jj
     {
         static void Main(string[] args)
         {
-
             string adapter = "defaultAdapter";
             string addr = "default address";
             string subnet = "255.255.255.0"; // args[3];
             string gway = "10.10.10.1"; // args[4];
 
             var queryStr = "empty query string"; // set address" + " " + adapter + " " + statDyn + " " + addr;
-          
-           // var showConfig = "show config";
+
+            // var showConfig = "show config";
+
+            HandleArgs.CreateAliasFromXml();
 
             switch (args.Length)
             {

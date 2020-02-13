@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 using System.Xml;
 
 namespace jj
+
 {
+
     public class HandleArgs
     {
-
-        public void CreateAliasFromXml()
+        public static void CreateAliasFromXml()
         {
-
             HandleXml Xmlr = new HandleXml();
             Xmlr.ReadFromXmlFile();
         }
-
         public static string FormatAdapter(string adapter)
         {
             switch (adapter)
