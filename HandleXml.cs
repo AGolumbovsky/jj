@@ -1,29 +1,66 @@
-﻿
-
-// ALL BElOW CODE IS FROM MS EXAMPLES, MAKE YOUR OWN DAMN CODE !!!!!
-
-using System;
+﻿using System;
 using System.IO;
 using System.Xml;
 
 using System.Linq;
+using System.Xml.Linq;
 
 public class HandleXml
 {
     public void ReadFromXmlFile()
     {
         //Create the XmlDocument.
-        XmlDocument doc = new XmlDocument();
-        doc.Load("C:/Users/agolumbovsky/ag_code/CS/jj/Aliases.xml"); //changing doc.LoadXml() to doc.Load()
+        var doc = XDocument.Load("C:/Users/agolumbovsky/ag_code/CS/jj/Aliases.xml");
+        // doc.Load("C:/Users/agolumbovsky/ag_code/CS/jj/Aliases.xml"); //changing doc.LoadXml() to doc.Load()
 
         //Display the document element.
-        Console.WriteLine(doc.DocumentElement.OuterXml);
+        // Console.WriteLine(doc.Descendants("adapter"));
 
-        /*
-            var meh = 
-            from entry in doc
+
+
+        // string[] xmlAliases = { "unoAlias", "dosAlias", "tresAlias" };
+        var myId = "e6";
+
+        var query =
+            from entry in doc.Root.Descendants("adapter")
+            // where entry.Attribute("id").Equals(myId)
             select entry;
-            
-         */
+
+        foreach (var i in query)
+        {
+            Console.Write(i + " yes");
+        }
+
+
+       /* // Loading from a file, you can also load from a stream
+        var xml = XDocument.Load(@"C:\contacts.xml");
+
+
+        // Query the data and write out a subset of contacts
+        var query = from c in xml.Root.Descendants("contact")
+                    where (int)c.Attribute("id") < 4
+                    select c.Element("firstName").Value + " " +
+                           c.Element("lastName").Value;
+
+
+        foreach (string name in query)
+        {
+            Console.WriteLine("Contact's Full Name: {0}", name);
+        }// Loading from a file, you can also load from a stream
+        var xml = XDocument.Load(@"C:\contacts.xml");
+
+
+        // Query the data and write out a subset of contacts
+        var query = from c in xml.Root.Descendants("contact")
+                    where (int)c.Attribute("id") < 4
+                    select c.Element("firstName").Value + " " +
+                           c.Element("lastName").Value;
+
+
+        foreach (string name in query)
+        {
+            Console.WriteLine("Contact's Full Name: {0}", name);
+        }*/
+
     }
 }

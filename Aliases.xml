@@ -1,21 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<iamgrootElement>
+<root>
   
   <adapters>
     
-    <adapter>
-      <alias>"e6"</alias>
+    <adapter id="e6">
       <value>"Ethernet 6"</value>
     </adapter>
     
-    <adapter>
-      <alias>"e8"</alias>
+    <adapter id="e8">
       <value>"Ethernet 8"</value>
     </adapter>
 
-    <adapter>
-      <alias>"w"</alias>
+    <adapter id="w">
       <value>"Wi-Fi"</value>
     </adapter>
     
@@ -23,13 +20,11 @@
   
   <addresses>
 
-    <addr>
-      <alias>"d"</alias>
+    <addr id="d">
       <value>"dhcp"</value>
     </addr>
 
-    <addr>
-      <alias>"192"</alias>
+    <addr id="192">
       <value>"static 192.168.1.193"</value>
       <subnet>"255.255.255.0"</subnet>
     </addr>
@@ -42,4 +37,4 @@
     
   </addresses>
   
-</iamgrootElement>
+</root>
