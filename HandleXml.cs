@@ -23,12 +23,12 @@ public class HandleXml
 
         var query =
             from entry in doc.Root.Descendants("adapter")
-            // where entry.Attribute("id").Equals(myId)
+            // where entry.Attribute("id") equals
             select entry;
 
         foreach (var i in query)
         {
-            Console.Write(i + " yes");
+            Console.Write(i + "\n");
         }
 
 
