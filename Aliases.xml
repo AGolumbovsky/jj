@@ -4,15 +4,18 @@
   
   <adapters>
     
-    <adapter id="e6">
+    <adapter>
+      <alias>"e6"</alias>
       <value>"Ethernet 6"</value>
     </adapter>
     
-    <adapter id="e8">
+    <adapter>
+      <alias>"e8"</alias>
       <value>"Ethernet 8"</value>
     </adapter>
 
-    <adapter id="w">
+    <adapter>
+      <alias>"w"</alias>
       <value>"Wi-Fi"</value>
     </adapter>
     
@@ -20,11 +23,13 @@
   
   <addresses>
 
-    <addr id="d">
+    <addr>
+      <alias>"d"</alias>
       <value>"dhcp"</value>
     </addr>
 
-    <addr id="192">
+    <addr>
+      <alias>"192"</alias>
       <value>"static 192.168.1.193"</value>
       <subnet>"255.255.255.0"</subnet>
     </addr>

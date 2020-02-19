@@ -22,8 +22,8 @@ public class HandleXml
         var myId = "e6";
 
         var query =
-            from entry in doc.Root.Descendants("adapter")
-            // where entry.Attribute("id") equals
+            from entry in doc.Root.Descendants("addr")
+            // where entry
             select entry;
 
         foreach (var i in query)
@@ -64,3 +64,11 @@ public class HandleXml
 
     }
 }
+
+/*XElement xelement = XElement.Load("..\\..\\Employees.xml");
+IEnumerable<XElement> employees = xelement.Elements();
+Console.WriteLine("List of all Employee Names :");
+foreach (var employee in employees)
+{
+    Console.WriteLine(employee.Element("Name").Value);
+}*/
