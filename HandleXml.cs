@@ -23,12 +23,12 @@ public class HandleXml
 
         var query =
             from entry in doc.Root.Descendants("addr")
-            // where entry
-            select entry;
+            where entry.Element("value").Value.Equals("dhcp")
+            select entry.Element("value").Value;
 
         foreach (var i in query)
         {
-            Console.Write(i + "\n");
+            Console.Write("here: " + i + "\n");
         }
 
 
