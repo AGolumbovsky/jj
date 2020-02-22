@@ -19,17 +19,19 @@ public class HandleXml
 
 
         // string[] xmlAliases = { "unoAlias", "dosAlias", "tresAlias" };
-        var myId = "e6";
+        var myId = "192";
 
         var query =
             from entry in doc.Root.Descendants("addr")
-            where entry.Element("value").Value.Equals("dhcp")
+            where (entry.Element("alias").Value).Contains(myId)
             select entry.Element("value").Value;
 
         foreach (var i in query)
         {
             Console.Write("here: " + i + "\n");
         }
+
+        // Console.WriteLine(typeof(query));
 
 
        /* // Loading from a file, you can also load from a stream
