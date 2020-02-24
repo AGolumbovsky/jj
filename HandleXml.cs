@@ -19,11 +19,12 @@ public class HandleXml
 
 
         // string[] xmlAliases = { "unoAlias", "dosAlias", "tresAlias" };
-        var myId = "192";
+        var addrAlias = "192";
+        var adapterAlias = "e6";
 
         var query =
             from entry in doc.Root.Descendants("addr")
-            where (entry.Element("alias").Value).Contains(myId)
+            where (entry.Element("alias").Value).Contains(addrAlias)
             select entry.Element("value").Value;
 
         foreach (var i in query)
