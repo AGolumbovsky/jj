@@ -53,7 +53,7 @@ namespace jj
                     break;
 
                 case "192":
-                    addr = "static 192.168.0.89";
+                    addr = "static 192.168.1.47";
                     break;
 
                 case "172":
