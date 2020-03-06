@@ -14,7 +14,9 @@ namespace jj
         public static void CreateAliasFromXml()
         {
             HandleXml Xmlr = new HandleXml();
-            Xmlr.ReadFromXmlFile();
+            // Xmlr.GetAddrFromXmlFile();
+            HandleXml.GetAddrFromXmlFile();
+            HandleXml.GetAdapterFromXmlFile();
         }
         public static string FormatAdapter(string adapter)
         {

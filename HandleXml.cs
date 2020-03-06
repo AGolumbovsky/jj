@@ -7,17 +7,11 @@ using System.Xml.Linq;
 
 public class HandleXml
 {
-    XDocument doc = XDocument.Load("C:/Users/agolumbovsky/ag_code/CS/jj/Aliases.xml");
-    public void ReadFromXmlFile()
+    static XDocument doc = XDocument.Load("C:/Users/agolumbovsky/ag_code/CS/jj/Aliases.xml");
+    public static void GetAddrFromXmlFile()
     {
-        // doc.Load("C:/Users/agolumbovsky/ag_code/CS/jj/Aliases.xml"); //changing doc.LoadXml() to doc.Load()
-
-        //Display the document element.
-        // Console.WriteLine(doc.Descendants("adapter"));
-
-        // string[] xmlAliases = { "unoAlias", "dosAlias", "tresAlias" };
         var addrAlias = "192";
-        var adapterAlias = "e6";
+        var addr = "default addr";
 
         var query =
             from entry in doc.Root.Descendants("addr")
@@ -26,8 +20,26 @@ public class HandleXml
 
         foreach (var i in query)
         {
-            Console.Write("here: " + i + "\n");
+            Console.WriteLine("Test addr " + i);
+            addr = i;
         }    
+    }
+
+    public static void GetAdapterFromXmlFile()
+    {
+        var adapterAlias = "e6";
+        var adapter = "default adapter";
+
+        var query =
+             from entry in doc.Root.Descendants("adapter")
+             where (entry.Element("alias").Value).Contains(adapterAlias)
+             select entry.Element("value").Value;
+
+        foreach (var i in query)
+        {
+            Console.WriteLine("Test Adapter " + i);
+            adapter = i;
+        }
     }
 
 }
