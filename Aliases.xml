@@ -41,5 +41,11 @@
     </addr>
     
   </addresses>
+
+  <masks>
+
+    <mask>"255.255.255.0</mask>
+    
+  </masks>
   
 </root>

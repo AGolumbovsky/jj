@@ -42,4 +42,22 @@ public class HandleXml
         }
     }
 
+    public static void GetMaskFromXmlFile()
+    {
+        var maskAlias = "24";
+        var mask = "255.255.255.0";
+
+        var query =
+            from entry in doc.Root.Descendants("mask")
+            where (entry.Element("alias").Value).Contains(maskAlias)
+            select entry.Element("value").Value;
+
+        foreach (var i in query)
+        {
+            Console.WriteLine("Test mask " + i);
+            mask = i;
+        }
+    }
+
 }
+
