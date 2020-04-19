@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Security.Principal;
 
 
 namespace jj
@@ -8,6 +9,18 @@ namespace jj
     {
         static void Main(string[] args)
         {
+            //check if app is running in Admin mode and prompt user if not
+            void WarnIfNotAdmin()
+            {
+                var isAdmin = new WindowsPrincipal(WindowsIdentity.GetCurrent())
+                          .IsInRole(WindowsBuiltInRole.Administrator);
+                if (!isAdmin)
+                {
+                    Console.WriteLine("You not Admin, you have to be Admin");
+                }
+            }
+            WarnIfNotAdmin();
+
             string adapter = "defaultAdapter";
             string addr = "default address";
             string subnet = "255.255.255.0"; // args[3];
