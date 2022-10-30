@@ -65,12 +65,7 @@ namespace jj
                 case "10":
                     addr = "static 10.10.1.193";
                     break;
-
-                case "icfff":   //don't show sensitive info in public repo. For now let's just do stars, ok?
-                    // yablochko.chmo.ochko.*
-                    addr = "static 1.2.3.4";
-                    break;
-
+                
                 default:
                     addr = "static" + " " + addr; // watch the spaces, they can easily break it
                     break;
