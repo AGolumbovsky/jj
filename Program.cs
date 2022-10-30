@@ -82,7 +82,7 @@ namespace jj
             p.StartInfo = psi;
             p.Start();
 
-            Console.WriteLine("netsh query string is: " + "***" + queryStr + "***");
+            // Console.WriteLine("netsh query string is: " + "***" + queryStr + "***");
         }
     }
 }
